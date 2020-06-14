@@ -6,7 +6,7 @@
 
     position: fixed;
     top: 0;
-    left: 5%;
+    left: 5px;
   }
 
   .box-blue {
@@ -16,16 +16,186 @@
 
     position: fixed;
     bottom: 0;
-    right: 5%;
+    right: 5px;
   }
 }
 
 @media (max-width: 1250px) {
+
   .box-red {
-
+    left:10px;
+    top:5px;
   }
-
   .box-blue {
-    
+    right:10px;
+    bottom:5px;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .box-red {
+    left:15px;
+    top:10px;
+  }
+  .box-blue {
+    right:15px;
+    bottom:10px;
+  }
+}
+
+@media (max-width: 1150px) {
+
+  .box-red {
+    left:20px;
+    top:15px;
+  }
+  .box-blue {
+    right:20px;
+    bottom:15px;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .box-red {
+    left:25px;
+    top:20px;
+  }
+  .box-blue {
+    right:25px;
+    bottom:20px;
+  }
+}
+
+@media (max-width: 1050px) {
+
+  .box-red {
+    left:30px;
+    top:25px;
+  }
+  .box-blue {
+    right:30px;
+    bottom:25px;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .box-red {
+    left:35px;
+    top:30px;
+  }
+  .box-blue {
+    right:35px;
+    bottom:30px;
+  }
+}
+
+@media (max-width: 950px) {
+
+  .box-red {
+    left:40px;
+    top:35px;
+  }
+  .box-blue {
+    right:40px;
+    bottom:35px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .box-red {
+    left:45px;
+    top:40px;
+  }
+  .box-blue {
+    right:45px;
+    bottom:40px;
+  }
+}
+
+@media (max-width: 850px) {
+
+  .box-red {
+    left:50px;
+    top:45px;
+  }
+  .box-blue {
+    right:50px;
+    bottom:45px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .box-red {
+    left:55px;
+    top:50px;
+  }
+  .box-blue {
+    right:55px;
+    bottom:50px;
+  }
+}
+
+@media (max-width: 750px) {
+
+  .box-red {
+    left:60px;
+    top:55px;
+  }
+  .box-blue {
+    right:60px;
+    bottom:55px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .box-red {
+    left:65px;
+    top:60px;
+  }
+  .box-blue {
+    right:65px;
+    bottom:60px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .box-red {
+    left:70px;
+    top:65px;
+  }
+  .box-blue {
+    right:70px;
+    bottom:65px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .box-red {
+    left:75px;
+    top:70px;
+  }
+  .box-blue {
+    right:75px;
+    bottom:70px;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .box-red {
+    left:80px;
+    top:75px;
+  }
+  .box-blue {
+    right:80px;
+    bottom:75px;
   }
 }
