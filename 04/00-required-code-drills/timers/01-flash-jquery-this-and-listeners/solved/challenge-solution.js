@@ -48,9 +48,14 @@ $(function () {
   });
 
   $(document).on("click", "#submit-button", function(event) {
+    // prevent the normal form submit action
     event.preventDefault();
+
+    // grab the text from the user input field
     var buttonText = $("#user-input").val();
+    // clear the text from the input field
     $("#user-input").val("");
+    // create a button with the text that user entetered.
     createButton(buttonText);
   });
 

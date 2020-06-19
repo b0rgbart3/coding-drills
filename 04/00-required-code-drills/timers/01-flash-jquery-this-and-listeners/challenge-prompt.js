@@ -7,8 +7,21 @@
 function createButton(str) {
   // ---------- Your Code Here ----------
 
+        // create a new button div
+        var newButton = document.createElement('button');
+
+        // add a class to the button so we can refer to it with our click listener
+
+        newButton.classList.add("content-button")
+        // set the text and data of the button to be the argument given to this function
+        newButton.textContent = str;
+        newButton.dataset["content"] = str + " ";
 
 
+        // add the button div we've been working on to the button area
+        var buttonArea = document.getElementById("button-area");
+
+        buttonArea.appendChild(newButton);
 
 
 
@@ -26,7 +39,8 @@ function createButton(str) {
 function displayContent(event) {
   // ---------- Your Code Here ----------
 
-
+      var text = $(this).data("content");
+      $("#display-area").append(text);
 
 
 
@@ -41,8 +55,41 @@ function displayContent(event) {
 $(function () {
   // ---------- Your Code Here ----------
 
+        //console.log('document')
+        // create a click listener on the buttons that we generate
+        // and have it call on the `displayContent` function
+
+        $(document).on("click", ".content-button", displayContent);
+
+        // create a click listener for the "Clear" button. It should
+        // empty the display area
 
 
+        $(document).on("click", "#clear-button", function(event) {
+        // prevent the normal form submit action
+        event.preventDefault();
+        // clear out all the newly created button
+        $("#display-area").empty();
+        $("#button-area").empty();
+        });
+
+
+
+  // create a click listener for the "Submit" button. It should
+  // save the string the user input into the form and call on the
+  // createButton function with that string
+
+        $(document).on("click", "#submit-button", function(event) {
+          // prevent the normal form submit action
+          event.preventDefault();
+
+          // grab the text from the user input field
+          var buttonText = $("#user-input").val();
+          // clear the text from the input field
+          $("#user-input").val("");
+          // create a button with the text that user entetered.
+          createButton(buttonText);
+        });
 
 
 
