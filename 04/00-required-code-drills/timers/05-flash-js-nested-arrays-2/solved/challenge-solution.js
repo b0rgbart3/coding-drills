@@ -108,8 +108,9 @@ function toyArrToObj(arrayOfToys){
   var toyArrayOfObjs = [];
 
   // ---------- Your Code Here ----------
-
+  console.log("In toyArrToObj method..........");
 	for(var i =0; i < arrayOfToys.length; i++){
+    console.log(i + "...");
 		toyArrayOfObjs.push({name: arrayOfToys[i]})
   }
   
@@ -118,8 +119,8 @@ function toyArrToObj(arrayOfToys){
 	return toyArrayOfObjs
 }
 
-var newToyArray = toyArrToObj(toyArray)
-console.log(newToyArray);
+var newToyArray = toyArrToObj(toyArray);
+//console.log(newToyArray);
 // The newToyArray should look like this:
 
 // [ { name: 'Iron Man vs. Ultron' },

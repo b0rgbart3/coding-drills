@@ -26,10 +26,37 @@ function returnCustomObject(arr){
 	var obj ={};
   
   // ---------- Your Code Here ----------
+  
+
+  for (var i = 0; i < arr.length; i++) {
+   if (obj[arr[i]]) {
+     obj[arr[i]] += 1;
+   } else {
+     obj[arr[i]] = 1;
+   }
+ }
+
+// My version --- which was cumbersome and didn't work
+// loop through the array
+   // for(i = 0; i < arr.length; i++) {
+   //    var count = 1;
+   //    console.log(arr[i]);
+   //    for (j = i+1; j < arr.length; j++) {
+   //        if (arr[i] === arr[j]) {
+             
+   //             count++;
+   //             console.log("found duplicate: " + arr[i] + "count: " + count);
+   //          }
+   //          obj[arr[i]] = count;
+   //     }
+      
+
+      // for each element, in the array, look to see how many times it occurs 
+
+// add the element, and the count to the new object
 
 
-
-
+      // }
 
 
   // ---------- End of Code Area ----------
@@ -67,10 +94,22 @@ function greatestFrequency(toyInventory){
   var maxToy, maxNum;
   
   // ---------- Your Code Here ----------
+  maxNum = 0;
+  var keys = Object.keys(toyInventory);
+  console.log(keys);
+  console.log(keys.length);
 
 
-
-
+    for (var i = 0; i < keys.length; i++) {
+      
+      if (toyInventory[keys[i]] > maxNum)
+      {
+        maxNum = toyInventory[keys[i]];
+        maxToy = keys[i];
+      }
+    } 
+   
+ 
 
 
   // ---------- End of Code Area ----------
@@ -100,6 +139,16 @@ function toyArrToObj(arrayOfToys){
 
   // ---------- Your Code Here ----------
 
+  // loop through the argument array
+
+  toyArray.forEach( function(element) {
+
+    // create a new object with the string at that location in the array
+    var newObj = { "name" : element};
+
+    // add that new object to our new object
+    toyArrayOfObjs.push(newObj);
+  })
 
 
 
@@ -213,12 +262,35 @@ toyInventoryArrayOfObjects = [
 // We can to consolidate the array of toy objects into a toyline object as defined by the instructions above
 function createCustomObject(objectArr){
 
-	customToyLineObj = {};
+  customToyLineObj = {};
+  
+  
 
   // ---------- Your Code Here ----------
 
 
+objectArr.forEach(function (toy, index) {
 
+  //console.log("----Creating our Custom Toy Line Object ---- " + index);
+      // if the toyline already exists, add the current toy to the "toyLineToys" array
+    // and add the stock of the current toy to the toyline stock 
+		if(customToyLineObj[toy.toyLine]){
+      console.log("Toyline already exists");
+			customToyLineObj[toy.toyLine].toyLineToys.push(toy.title)
+      customToyLineObj[toy.toyLine].totalToysInToyLine += toy.stock
+    }
+      
+    // otherwise, instantiate a new toyline object within our `customToyLineObj`
+    else {
+
+        var newCustomToyLineObj = { "toyLine": toy.toyLine,
+                                    "toyLineToys" : [toy.title],
+                                    "totalToysInToyLine": toy.stock
+
+        };
+        customToyLineObj[toy.toyLine]= newCustomToyLineObj;
+    }
+});
 
 
 
@@ -260,11 +332,23 @@ console.log("==================== Question 05  ====================");
 
 function areDups(arr){
 
+  console.log("In areDups");
+
   // ---------- Your Code Here ----------
+  var dups = false;
+  var alreadyEncountered = {};
+  arr.forEach(function(element,index) {
+    console.log("index: " + index + ", value: " + element);
+      if (  alreadyEncountered[element] ) {
+        console.log("------already Found ------");
+        alreadyEncountered[element] = alreadyEncountered[element]+1;
+        dups = true;
+      } else {
+        alreadyEncountered[element] = 1;
+      }
+    });
 
-
-
-
+    return dups
 
 
   // ---------- End of Code Area ----------
