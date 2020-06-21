@@ -6,7 +6,7 @@
 function checkWibble(str) {
 
   // ---------- Your Code Here ----------
-
+  return (str.length % 2 === 0);
 
 
 
@@ -26,9 +26,45 @@ function checkWobble(str) {
 
   // ---------- Your Code Here ----------
 
+// var vowels = ["a","e","i","o","u"];
+// var vowelcount = 0;
 
-  
+// vowels.forEach(function(vowel, index){
+//   console.log(vowel + ", " + index);
+//   if (str.includes(vowel)) {
+//     vowelcount++;
+//     console.log("vowelcount: " + vowelcount);
+//   }
+//   if ((vowelcount % 2)!==0) {
+//     console.log('odd number of vowels');
+//     return true;
+//   }
+//   else {
+//     return false;
+//   }
+// })
 
+
+  // create a string of the all vowels for us to check the letters against
+  var vowels = "aeiou";
+
+  // declare a variable to track the number of vowels in the world and 
+  // instantiate it to 0
+  var vowelCount = 0;
+
+  // iterate through the characters in the `str`
+  for (var i = 0; i < str.length; i++) {
+
+    // if the currect letter is a vowel, increment the variable used to track the
+    // number of vowels
+    if (vowels.includes(str[i])) {
+      vowelCount += 1;
+    }
+  }
+
+  // check if the number of vowels is odd
+  // return true if it is and false if it isn't
+  return (vowelCount % 2 !== 0);
 
 
 
@@ -47,14 +83,19 @@ function checkWobble(str) {
 function wibbleWobble(arr) {
   
   // ---------- Your Code Here ----------
+      
+    arr.forEach(function(string,index){
+      if(checkWibble(string)){
+        arr[index] = "Wibble";
+      }
+      if (checkWobble(string)) {
+        arr[index] = "Wobble";
+      }
 
-
-  
-
-
-
-
-
+      if (checkWibble(string) && checkWobble(string)) {
+        arr[index] = "WibbleWobble";
+      }
+    });
   // ----------- End Code Area -----------
   return arr;
 }
